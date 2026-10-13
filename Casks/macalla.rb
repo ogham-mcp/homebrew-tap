@@ -17,15 +17,17 @@ cask "macalla" do
 
   app "Macalla.app"
 
-  uninstall launchctl: "dev.macalla.desktop.login",
-            quit:      "dev.macalla.desktop"
+  # The login item is left alone on uninstall, because brew upgrade runs the
+  # old version's uninstall first and would switch "Open at login" off.
+  uninstall quit: "dev.macalla.desktop"
 
-  zap trash: [
-    "~/Library/Application Support/dev.macalla.desktop",
-    "~/Library/Application Support/Macalla",
-    "~/Library/Caches/dev.macalla.desktop",
-    "~/Library/LaunchAgents/dev.macalla.desktop.login.plist",
-    "~/Library/Preferences/dev.macalla.desktop.plist",
-    "~/Library/WebKit/dev.macalla.desktop",
-  ]
+  zap launchctl: "dev.macalla.desktop.login",
+      trash:     [
+        "~/Library/Application Support/dev.macalla.desktop",
+        "~/Library/Application Support/Macalla",
+        "~/Library/Caches/dev.macalla.desktop",
+        "~/Library/LaunchAgents/dev.macalla.desktop.login.plist",
+        "~/Library/Preferences/dev.macalla.desktop.plist",
+        "~/Library/WebKit/dev.macalla.desktop",
+      ]
 end
