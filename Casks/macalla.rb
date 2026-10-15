@@ -1,6 +1,6 @@
 cask "macalla" do
-  version "0.2.1"
-  sha256 "f2ec04d72f6f8f68beb0231cd4371075a4b20ae2151b8afd604b8ddd0f1b8170"
+  version "0.2.2"
+  sha256 "84685e1d607f4c5db0b9cefd7862974231bf7c10745448f1de23b335b6d6c43e"
 
   url "https://github.com/ogham-mcp/macalla/releases/download/v#{version}/Macalla_#{version}_aarch64.dmg"
   name "Macalla"
